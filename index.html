@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="file:///C:/Users/mateu/Desktop/mobile/index.html#"><img src="Assets/1280px-Ecomp-Poli-UPE_logo.svg.png" alt="logo" width="35%"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="file:///C:/Users/mateu/Desktop/mobile/about.html">Sobre Nós</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="file:///C:/Users/mateu/Desktop/mobile/news.html">Notícias</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="file:///C:/Users/mateu/Desktop/mobile/courses.html">Cursos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="file:///C:/Users/mateu/Desktop/mobile/contact.html">Contato</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+			</form>
+		</div>
+	</nav>
+
+	<div id="demo" class="carousel slide" data-ride="carousel">
+
+		<!-- Indicators -->
+		<center><ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+
+
+		<!-- The slideshow -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="Assets/chris-ried-512801-unsplash.jpg" alt="code" width="70%">
+				<div class="carousel-caption d-none d-md-block">
+					<h3>"It's time to code"</h3>
+					<p>Breve resumo da notícia</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="Assets/marvin-meyer-571072-unsplash.jpg" alt="Chicago" width="70%">
+				<div class="carousel-caption d-none d-md-block">
+					<h3>"Teamwork works"</h3>
+					<p>Breve resumo da notícia</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="Assets/fancycrave-530798-unsplash.jpg" alt="New York" width="70%">
+				<div class="carousel-caption d-none d-md-block">
+					<h3>Hardware: coisas interessantes</h3>
+					<p>Breve resumo da notícia</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a></center>
+
+	</div>
+</div>
+<div class="About">
+	<div class="Texto">
+		<br>
+		<h1>O que é o E-Comp?</h1>
+		<br>
+		<p>	ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+	</div>
+	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/VQH8ZTgna3Q" 
+	frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="Vídeo" ></iframe>
+	
+</div>
+<div class="Footpage">
+	R. Benfica, 455 - Madalena, Recife - PE, 50720-001
+	<br>
+	Telefone: (81) 3184-7500
+</div>
+
+
+</body>
+</html>
+<style type="text/css">
+body{
+	background: linear-gradient(black, gray);
+}
+.navbar-brand{
+	width: 50%;
+}
+.About{
+	width: 100%;
+	height: 500px;	
+	background: linear-gradient(lightblue, gray);
+}
+.Texto{
+	height: 100%;
+	width: 50%;
+	background: linear-gradient(lightblue, gray);
+	padding: 3%;
+	float: left;
+}
+#Vídeo{
+	float: left;
+	margin-top: 8%;
+	margin-left: 4%;
+}
+.Footpage{
+	font-size: 17px;
+	color: black;
+	width: 100%;
+	height: 100%;	
+	background-color: lightgray;
+	text-align: center;
+}
+</style>
