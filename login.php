@@ -1,14 +1,9 @@
 <?php
-include 'conection.php'; 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login";
-$conn = new mysqli($servername, $username, $password, $dbname); 
+session_start();
 
-//Para login, usar 'select' ao invés de 'insert'
-//Fazer página de login
+include 'connection.php';
+
 
 $modo = "";
 if (isset($_POST['modo'])) { 
@@ -18,10 +13,13 @@ if (isset($_POST['modo'])) {
 $login = "";
 if(isset($_POST['login'])){
 	$login = $_POST['login'];
+	$_SESSION['login'] = $login;
 }
+
 $senha = "";
 if(isset($_POST['senha'])){
 	$senha = $_POST['senha'];
+	$_SESSION['senha'] = $senha;
 }
 
 if ($modo == 'inserir') {
@@ -29,7 +27,9 @@ if ($modo == 'inserir') {
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 	if($row){
-		header('Location: index.html');
+		session_start();
+		$_SESSION['login']="$login";
+		header('Location: perfil.php');
 	}
 	else{
 		echo "<script>alert('Login ou senha incorretos');</script>";
@@ -77,15 +77,6 @@ crossorigin="anonymous"></script>
 
 	<script src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
-		$('#body').css('background-color', 'slateblue');
-		// if(confirm ('r u sure?')){
-		// 	document.getElementById('body').setAttribute('style', 'background-color: slateblue');
-		// }
-		// var x;
-		// for(var i = 0; i < 10; i++){
-		// 	console.log('javascript');
-		// }
-
 	</script>
 </body>
 </html>

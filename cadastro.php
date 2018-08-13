@@ -1,77 +1,73 @@
 <?php
-include 'conection.php'; 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login";
-$conn = new mysqli($servername, $username, $password, $dbname); 
+session_start();
 
-//Para login, usar 'select' ao invés de 'insert'
-//Fazer página de login
+include 'connection.php';
 
 $modo = "";
-if (isset($_POST['modo'])) { 
+if (isset ($_POST['modo'])) {
 	$modo = $_POST['modo'];
 }
 
-$login = "";
-if(isset($_POST['login'])){
-	$login = $_POST['login'];
+$_SESSION["login"] = "";
+if (isset($_POST['login'])) {
+	$_SESSION["login"] = $_POST['login'];
 }
 
-$senha = "";
-if(isset($_POST['senha'])){
-	$senha = $_POST['senha'];
+$_SESSION["senha"] = "";
+if (isset($_POST['senha'])) {
+	$_SESSION["senha"] = $_POST['senha'];
 }
 
-$nomeCompleto = "";
-if(isset($_POST['nomeCompleto'])){
-	$nomeCompleto = $_POST['nomeCompleto'];
+$_SESSION["nomeCompleto"] = "";
+if (isset($_POST['nomeCompleto'])) {
+	$_SESSION["nomeCompleto"] = $_POST['nomeCompleto'];
 }
 
-$email = "";
-if(isset($_POST['email'])){
-	$email = $_POST['email'];
+$_SESSION["email"] = "";
+if (isset($_POST['email'])) {
+	$_SESSION["email"] = $_POST['email'];
 }
 
-$cpf = "";
-if(isset($_POST['cpf'])){
-	$cpf = $_POST['cpf'];
+$_SESSION["cpf"] = "";
+if (isset($_POST['cpf'])) {
+	$_SESSION["cpf"] = $_POST['cpf'];
 }
 
-$rg = "";
-if(isset($_POST['rg'])){
-	$rg = $_POST['rg'];
+$_SESSION["rg"] = "";
+if (isset($_POST['rg'])) {
+	$_SESSION["rg"] = $_POST['rg'];
 }
 
-$dataNascimento = "";
-if(isset($_POST['dataNascimento'])){
-	$dataNascimento = $_POST['dataNascimento'];
+$_SESSION["dataNascimento"] = "";
+if (isset($_POST['dataNascimento'])) {
+	$_SESSION["dataNascimento"] = $_POST['dataNascimento'];
 }
 
-$idade = "";
-if(isset($_POST['idade'])){
-	$idade = $_POST['idade'];
+$_SESSION["idade"] = 0;
+if (isset($_POST['idade'])) {
+	$_SESSION["idade"] = $_POST['idade'];
 }
 
-$nomePai = "";
-if(isset($_POST['nomePai'])){
-	$nomePai = $_POST['nomePai'];
+$_SESSION["nomePai"] = "";
+if (isset($_POST['nomePai'])) {
+	$_SESSION["nomePai"] = $_POST['nomePai'];
 }
 
-$nomeMae = "";
-if(isset($_POST['nomeMae'])){
-	$nomeMae = $_POST['nomeMae'];
+$_SESSION["nomeMae"] = "";
+if (isset($_POST['nomeMae'])) {
+	$_SESSION["nomeMae"] = $_POST['nomeMae'];
 }
+
 
 if ($modo == 'inserir') {
 	$sql = "INSERT INTO cadastro (login, senha, nomeCompleto, email, cpf, rg, dataNascimento, idade, nomePai, nomeMae) 
-			VALUES ('".$login."', '".$senha."', '".$nomeCompleto."','".$email."', '".$cpf."', '".$rg."', 
-			'".$dataNascimento."', '".$idade."', '".$nomePai."', '".$nomeMae."')";
+	VALUES ('".$_SESSION["login"]."', '".$_SESSION["senha"]."', '".$_SESSION["nomeCompleto"]."',
+	'".$_SESSION["email"]."', '".$_SESSION["cpf"]."', '".$_SESSION["rg"]."', '".$_SESSION["dataNascimento"]."', 
+	'".$_SESSION["idade"]."', '".$_SESSION["nomePai"]."', '".$_SESSION["nomeMae"]."')";
 	$result = $conn->query($sql);
 	if($result){
-		echo "<script> alert('Cadastro realisado com sucesso!'); window.location = 'inicio.php'; </script>";
+		echo "<script> alert('Cadastro realisado com sucesso!'); window.location = 'index.php'; </script>";
 	}
 }
 
@@ -90,7 +86,7 @@ crossorigin="anonymous"></script>
 	<div class="caixa-cadastro">
 		<form method="post" action="cadastro.php">
 			<div class="img">
-				<img src="Assets/1280px-Ecomp-Poli-UPE_logo.svg.png" alt="logo" width="45%">
+				<img src="Assets/1280px-Ecomp-Poli-UPE_logo.svg.png" alt="logo" width="46%">
 			</div>
 			<h2>Cadastro</h2>
 			<label>Nome completo: </label>
@@ -147,14 +143,6 @@ crossorigin="anonymous"></script>
 	<script src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		$('#body').css('background-color', 'slateblue');
-		// if(confirm ('r u sure?')){
-		// 	document.getElementById('body').setAttribute('style', 'background-color: slateblue');
-		// }
-		// var x;
-		// for(var i = 0; i < 10; i++){
-		// 	console.log('javascript');
-		// }
-
 	</script>
 
 </body>
